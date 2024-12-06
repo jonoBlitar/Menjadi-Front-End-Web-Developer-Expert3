@@ -3,12 +3,12 @@ import {
   createLikeButtonTemplate,
   createLikedButtonTemplate,
 } from '../views/templates/template-creator';
-import { initSwalError, initSwalSuccess } from './swal-initiator';
+import { initSwalSuccess } from './swal-initiator';
 
 const LikeButtonInitiator = {
   async init({ likeButtonContainer, resto }) {
     this._likeButtonContainer = likeButtonContainer;
-    this._restaurant = resto.restaurant;
+    this._restaurant = resto;
     console.log('Restaurant Object:', this._restaurant);
     await this._renderButton();
   },

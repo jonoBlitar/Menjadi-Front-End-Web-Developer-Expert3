@@ -26,6 +26,32 @@
     <a href="#main-content" class="skip-link">Menuju ke konten</a>
     <!-- header -->
     <header class="hero">
+      <picture>
+        <!-- Sumber gambar untuk layar besar -->
+        <source 
+          media="(min-width: 1200px)" 
+          srcset="./images/heros/hero-image_2-1200.jpg" 
+          type="image/jpeg"
+        />
+        <!-- Sumber gambar untuk layar menengah -->
+        <source 
+          media="(min-width: 768px)" 
+          srcset="./images/heros/hero-image_2-1000.jpg" 
+          type="image/jpeg"
+        />
+        <!-- Sumber gambar untuk layar kecil -->
+        <source 
+          media="(max-width: 767px)" 
+          srcset="./images/heros/hero-image_2-600.jpg" 
+          type="image/jpeg"
+        />
+        <!-- Default gambar (fallback) -->
+        <img 
+          src="./images/heros/hero-image_2-600.jpg" 
+          alt="Gambar Hero" 
+          class="hero__image"
+        />
+      </picture>
       <!-- nav -->
       <nav>
         <div class="menu-hp">

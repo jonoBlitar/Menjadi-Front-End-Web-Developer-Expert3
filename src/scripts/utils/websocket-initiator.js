@@ -42,8 +42,8 @@ const WebSocketInitiator = {
       title: reviewData.name,
       options: {
         body: reviewData.review,
-        icon: 'icons/32x32.png',
-        image: '../../public/icon/touch-screen.png',
+        icon: 'icon/192x192.png',
+        image: 'icon/touch-screen.png',
         vibrate: [200, 100, 200],
       },
     });
