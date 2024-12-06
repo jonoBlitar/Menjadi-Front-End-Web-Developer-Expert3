@@ -14,7 +14,7 @@ const LikeButtonInitiator = {
   },
 
   async _renderButton() {
-    try {
+    //try {
       const { id } = this._restaurant;
       console.log('Resto:', id);
       const restaurant = await RestoAkb.getResto(id);
@@ -25,12 +25,12 @@ const LikeButtonInitiator = {
       } else {
         this._renderLikeButtonTemplate();
       }
-    } catch (err) {
+    /* } catch (err) {
       console.error(err);
       initSwalError(err.message);
 
       throw new Error(err);
-    }
+    } */
   },
   /*  async _isRestoranAda(id) {
     const restaurant = await RestoAkb.getResto(id);

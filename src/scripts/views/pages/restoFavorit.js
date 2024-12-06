@@ -20,9 +20,7 @@ const Favorite = {
     console.log(data);
     // if data empty
     if (data.length === 0) {
-      favRestoContainer.innerHTML = `
-        Empty favorite Resto. Put one, by clicking heart button in the detail page.
-      `;
+      favRestoContainer.innerHTML = `Empty favorite Resto. Put one, by clicking heart button in the detail page.`;
     }
     // display all fav resto
     data.forEach((resto) => {

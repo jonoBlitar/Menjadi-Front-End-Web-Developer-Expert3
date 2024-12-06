@@ -5,7 +5,7 @@ const gambarCard = (resto) => `
     <div tabindex="0" class="card">
           <a href="#/resto/${resto.id}" class="card-a-tag">
           <div class="img-container">
-            <img tabindex="0" class="card-image" alt="${resto.name}" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}"/>
+            <img tabindex="0" class="card-image lazyload" alt="${resto.name}" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}"/>
             <span tabindex="0" class="card-city">
               <span>${resto.city}</span>
             </span>

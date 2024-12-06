@@ -4,6 +4,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 //const { InjectManifest } = require('workbox-webpack-plugin');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const ImageminMozjpeg = require('imagemin-mozjpeg');
+const imageminPngquant = require('imagemin-pngquant');
 
 module.exports = {
   entry: {
@@ -42,6 +45,10 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
+          globOptions: {
+            // CopyWebpackPlugin mengabaikan berkas yang berada di dalam folder images
+            ignore: ['**/images/**'],
+          },
         },
       ],
     }),
@@ -59,7 +66,18 @@ module.exports = {
           },
         },
       ],
-    })
+    }),
+    new ImageminWebpackPlugin({
+      plugins: [
+        ImageminMozjpeg({
+          quality: 50,
+          progressive: true,
+        }),
+        imageminPngquant({
+          quality: [0.3, 0.5],
+        }),
+      ],
+    }),
     /*  new InjectManifest({
       swSrc: path.resolve(__dirname, 'src/scripts/utils/sw.js'),
       swDest: 'sw.js',
